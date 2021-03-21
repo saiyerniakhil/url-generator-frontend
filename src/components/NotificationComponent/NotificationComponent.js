@@ -1,6 +1,6 @@
 const NotificationComponent = ({ response, type, message }) => {
   const resultUrl =
-    response !== null && `https://fxjlf.csb.app/result/${response.uniqueUrl}`;
+    response !== null && `${window.location.href}result/${response.uniqueUrl}`;
   const urlComponent = (
     <a className="text-center" href={resultUrl}>
       {resultUrl}
