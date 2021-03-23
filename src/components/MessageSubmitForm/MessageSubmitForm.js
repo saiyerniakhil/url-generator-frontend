@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const MessageSubmitForm = ({ handleNotification }) => {
   const [textArea, setTextArea] = useState("");
   const [timeInput, setTimeInput] = useState("");
   const [timeType, setTimeType] = useState("seconds");
+  const [disabled, setDisabled] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // converting time into seconds
+    setDisabled(true)
     let timeInSeconds;
     if (timeType === "days") {
       timeInSeconds = timeInput * 24 * 60 * 60;
@@ -42,7 +44,18 @@ const MessageSubmitForm = ({ handleNotification }) => {
     setTextArea("");
     setTimeInput("");
     setTimeType("seconds");
+    setDisabled(false)
   };
+
+  const disableForm = () => {
+    if (textArea === "" || timeInput === "") {
+      setDisabled(true)
+    } else {
+      setDisabled(false)
+    }
+  } 
+
+  useEffect(disableForm,[textArea, timeInput])
 
   return (
     <form data-testid="message-form-test" onSubmit={handleSubmit}>
@@ -92,6 +105,7 @@ const MessageSubmitForm = ({ handleNotification }) => {
           type="submit"
           value="Generate Link 🔗"
           className="btn btn-primary form-control"
+          disabled={disabled}
         />
       </div>
     </form>
