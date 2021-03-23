@@ -15,7 +15,7 @@ const HeroImage = ({ imageName }) => {
       <img src={imageSrc} alt={imageName} />
       {imageName === "homepage" && (
         <>
-          <h3 className="hero-text">Welcome to URL Generator</h3>
+          <h3 data-testid="hero-text-test" className="hero-text">Welcome to URL Generator</h3>
         </>
       )}
     </div>

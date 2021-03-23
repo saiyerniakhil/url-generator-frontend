@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
+      <Link className="navbar-brand" data-testid="navbar-brand-test"to="/">
         URL-GENERATOR
       </Link>
       <button
@@ -20,12 +20,13 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav d-flex justify-content-end w-100">
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <Link data-testid="home-navlink" className="nav-link" to="/">
               Home
             </Link>
           </li>
           <li className="nav-item">
             <a
+              data-testid="portfolio-navlink"
               className="nav-link"
               href="https://github.com/saiyerniakhil"
               target="_blank"

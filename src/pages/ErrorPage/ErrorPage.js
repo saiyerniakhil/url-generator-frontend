@@ -9,7 +9,7 @@ const ErrorPage = ({ result }) => {
         {result === null && (
           <>
             {" "}
-            <div className="card mb-5">
+            <div data-testid="info-card-test-error" className="card mb-5">
               <div className="card-header text-left">Oops!</div>
               <div className="card-body">
                 Your message couldn't be found, might be expired! No problem,

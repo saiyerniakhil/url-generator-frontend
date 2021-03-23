@@ -45,9 +45,10 @@ const MessageSubmitForm = ({ handleNotification }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form data-testid="message-form-test" onSubmit={handleSubmit}>
       <div className="form-group">
         <textarea
+          data-testid="text-area-test-form"
           className="form-control"
           value={textArea}
           onChange={(e) => setTextArea(e.target.value)}
@@ -63,8 +64,9 @@ const MessageSubmitForm = ({ handleNotification }) => {
       </div>
       <div className="form-group">
         <input
+          data-testid="text-input-test-form"
           value={timeInput}
-          onChange={(e) => setTimeInput(e.target.value)}
+          onChange={(e) => {e.target.value > 0 && setTimeInput(e.target.value)}}
           className="form-control"
           placeholder="Enter Time"
           required
@@ -73,6 +75,7 @@ const MessageSubmitForm = ({ handleNotification }) => {
       </div>
       <div className="form-group">
         <select
+          data-testid="select-test-form"
           value={timeType}
           onChange={(e) => setTimeType(e.target.value)}
           className="form-control"
@@ -85,6 +88,7 @@ const MessageSubmitForm = ({ handleNotification }) => {
       </div>
       <div className="form-group">
         <input
+          data-testid="submit-test-form"
           type="submit"
           value="Generate Link 🔗"
           className="btn btn-primary form-control"

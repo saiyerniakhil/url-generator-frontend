@@ -15,7 +15,6 @@ const BufferPage = (props) => {
       setIsLoading(true);
       let data;
       try {
-        console.log("true");
         data = await fetch(
           `https://url-generator-saiyerniakhil.herokuapp.com/retrieve/${uuid}`
         );
@@ -31,7 +30,7 @@ const BufferPage = (props) => {
 
   return (
     <div>
-      <div className="container">
+      <div data-testid="buffer-page-test" className="container">
         {isLoading && <Loader />}
         {responseObject !== null ? (
           <ResultPage result={responseObject} />

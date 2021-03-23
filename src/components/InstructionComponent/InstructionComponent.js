@@ -1,6 +1,6 @@
 const InstructionComponent = () => {
   return (
-    <div className="text-left border">
+    <div data-testid="instruction-test" className="text-left border">
       <h4 className="px-3 pt-3">How does it work?</h4>
       <hr style={{ width: "90%" }} />
       <ul>
