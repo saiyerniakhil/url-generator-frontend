@@ -8,3 +8,7 @@ Libraries used -
 2. React-Router
 3. Bootstrap
 4. React-Testing-Library
+
+Credits 
+to illustrations used in the webapp - [undraw.co](https://undraw.co/)
+Loader icon - [loading.io](https://loading.io/)
